@@ -4,7 +4,8 @@
     <div class="comics-section">
         <div class="container py-5">
             <div class="d-flex flex-wrap">
-                @foreach ($comics as $elem)
+                @foreach ($comics as $key => $elem)
+                <a href="{{ route('show.comic', compact('key')) }}">
                     <div class="card-container d-flex flex-column">
                         <div>
                             <img class="image-comic" src="{{ $elem['thumb'] }}" alt="Card image cap">
@@ -13,6 +14,7 @@
                             {{ $elem['title'] }}
                         </div>
                     </div>
+                </a>
                 @endforeach
             </div>
         </div>
